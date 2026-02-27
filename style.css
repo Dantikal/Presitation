@@ -1,0 +1,365 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #03050a;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(0, 100, 255, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 90% 70%, rgba(100, 0, 255, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 30% 80%, rgba(0, 200, 255, 0.06) 0%, transparent 50%);
+    color: #f0f4fe;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+}
+
+.slides-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* супер-карточка с мощным стеклом */
+.slide-card {
+    background: rgba(8, 18, 32, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 4rem;
+    padding: 4rem 4rem;
+    border: 1px solid rgba(0, 160, 255, 0.25);
+    box-shadow: 0 50px 100px -30px #000000, 0 0 0 1px rgba(56, 189, 248, 0.15) inset;
+    transition: all 0.6s cubic-bezier(0.2, 0.9, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.slide-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.8s;
+    pointer-events: none;
+}
+
+.slide-card:hover {
+    border-color: rgba(56, 189, 248, 0.6);
+    box-shadow: 0 60px 120px -20px #0f2b70, 0 0 0 1.5px #3b82f6 inset;
+    transform: translateY(-6px) scale(1.005);
+}
+
+.slide-card:hover::after {
+    opacity: 1;
+}
+
+/* ГЛАВНЫЙ ЭКРАН СПИКЕРА */
+.speaker {
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+    margin-bottom: 2.5rem;
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: -0.02em;
+    border-bottom: 2px solid rgba(59,130,246,0.4);
+    padding-bottom: 1rem;
+}
+
+.speaker i {
+    font-size: 2.7rem;
+    background: linear-gradient(145deg, #142c44, #051a2b);
+    padding: 0.9rem;
+    border-radius: 60%;
+    color: #90d0ff;
+    box-shadow: 0 0 0 3px #1e3f6e, 0 20px 30px -8px #000;
+}
+
+.daniel {
+    color: #b1e0ff;
+    text-shadow: 0 0 15px #3b82f6;
+    border-left: 6px solid #3b82f6;
+    padding-left: 2rem;
+    background: linear-gradient(90deg, rgba(59,130,246,0.15), transparent);
+}
+
+.kamila {
+    color: #ffd966;
+    text-shadow: 0 0 15px #f59e0b;
+    border-left: 6px solid #f59e0b;
+    padding-left: 2rem;
+    background: linear-gradient(90deg, rgba(245,158,11,0.15), transparent);
+}
+
+h2 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    margin-bottom: 2.2rem;
+    background: linear-gradient(to right, #fff, #b0dcff, #80c4ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.super-stat {
+    background: rgba(0, 40, 85, 0.6);
+    backdrop-filter: blur(10px);
+    display: inline-block;
+    padding: 0.8rem 2.5rem;
+    border-radius: 80px;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #aad0ff;
+    border: 1.5px solid #2b6fd9;
+    box-shadow: 0 8px 25px #00276640;
+    margin: 1.8rem 0 1.5rem;
+}
+
+.massive-text {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #d6e6ff;
+    margin: 2rem 0;
+    padding: 1.5rem 2rem;
+    background: rgba(0, 30, 60, 0.35);
+    border-radius: 3rem;
+    border-left: 8px solid #3b82f6;
+    line-height: 1.6;
+}
+
+ul {
+    list-style: none;
+    margin: 2rem 0;
+}
+
+li {
+    margin-bottom: 1.3rem;
+    padding-left: 2.5rem;
+    position: relative;
+    font-weight: 400;
+    font-size: 1.25rem;
+    color: #ecf3ff;
+}
+
+li::before {
+    content: "⚡";
+    position: absolute;
+    left: 0;
+    color: #ffbb2e;
+    font-size: 1.6rem;
+    font-weight: 900;
+}
+
+.grid-2-super {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    margin: 3rem 0 1.5rem;
+}
+
+.grid-3-super {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 2.5rem 0;
+}
+
+.premium-card {
+    background: rgba(6, 21, 40, 0.7);
+    backdrop-filter: blur(12px);
+    border-radius: 2.8rem;
+    padding: 2.5rem 2rem;
+    border: 1px solid #254a79;
+    transition: all 0.3s;
+}
+
+.premium-card i {
+    font-size: 3rem;
+    color: #3b82f6;
+    margin-bottom: 1.5rem;
+    background: #0a2942;
+    padding: 1rem;
+    border-radius: 2rem;
+}
+
+.premium-card:hover {
+    background: #102c4a;
+    border-color: #3b82f6;
+}
+
+.badge-ultimate {
+    background: rgba(0, 80, 160, 0.35);
+    backdrop-filter: blur(10px);
+    border-radius: 60px;
+    padding: 0.6rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: 1.5px solid #3b82f6;
+    color: #b5dcff;
+    margin-right: 1rem;
+    display: inline-block;
+}
+
+.progress-luxury {
+    background: rgba(30, 50, 80, 0.5);
+    backdrop-filter: blur(5px);
+    height: 1.2rem;
+    border-radius: 60px;
+    margin: 2rem 0;
+    border: 1px solid #2e5a99;
+    overflow: hidden;
+}
+
+.progress-fill-luxury {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #3b82f6, #7dd3fc, #38bdf8);
+    border-radius: 60px;
+    box-shadow: 0 0 30px #3b82f6;
+    transition: width 2s ease;
+}
+
+.numbers-row {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 3rem 0;
+}
+
+.stat-tower {
+    background: rgba(0, 20, 45, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 3rem;
+    padding: 2rem 2.8rem;
+    text-align: center;
+    flex: 1 1 200px;
+    border: 1px solid #2e5f9e;
+    border-bottom: 5px solid #3b82f6;
+    transition: all 0.3s;
+}
+
+.stat-tower:hover {
+    transform: scale(1.07);
+    background: #0a2b50;
+    border-bottom-color: #ffbb2e;
+}
+
+.stat-tower .huge-number {
+    font-size: 4rem;
+    font-weight: 900;
+    background: linear-gradient(145deg, #fff, #7ab0ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+}
+
+.feature-block {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin: 2rem 0;
+    background: rgba(0, 44, 75, 0.4);
+    border-radius: 3rem;
+    padding: 2rem;
+}
+
+.vision-final {
+    background: linear-gradient(145deg, #021122, #081c33);
+    border: 2px solid #2b6ed7;
+    box-shadow: 0 0 60px #003cff30;
+}
+
+.final-quote {
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: white;
+    margin: 2rem 0;
+    text-shadow: 0 0 30px #3b82f6;
+}
+
+hr {
+    border: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #3b82f6, #aad0ff, #3b82f6, transparent);
+    margin: 3rem 0;
+}
+
+.footer-epic {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+    color: #8fcbff;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* НОВЫЕ СТИЛИ ДЛЯ БЛОКОВ ПОЛЬЗЫ */
+.benefit-block {
+    background: rgba(0, 35, 70, 0.6);
+    border-radius: 2.5rem;
+    padding: 2rem;
+    margin-top: 2rem;
+    border-left: 6px solid #3b82f6;
+}
+
+.benefit-block h4 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #ffd966;
+}
+
+.benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.2rem;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255,255,255,0.03);
+    padding: 1rem;
+    border-radius: 1.5rem;
+}
+
+.benefit-item i {
+    font-size: 1.5rem;
+    color: #3b82f6;
+}
+
+.testimonial-card {
+    background: rgba(10, 30, 55, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 2.5rem;
+    padding: 2rem;
+    border: 1px solid #2b4f7c;
+    transition: 0.3s;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    border-color: #fbbf24;
+}
+
+@media (max-width: 900px) {
+    .slide-card { padding: 2.5rem; }
+    h2 { font-size: 2.4rem; }
+    .grid-2-super, .grid-3-super { grid-template-columns: 1fr; }
+    .final-quote { font-size: 1.8rem; }
+    .benefit-grid { grid-template-columns: 1fr; }
+}
